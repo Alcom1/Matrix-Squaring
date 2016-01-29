@@ -5,11 +5,14 @@
         <title>File Input</title>
         <style>
         </style>
+        <script src="js/class_matrix.js"></script> 
         <script>
             //Init
             function init()
             {
-                console.log("Init");
+                var matrix = new Matrix();
+                var matrixSquared = matrix.getMult(matrix);
+                matrixSquared.log();
             }
             
             window.onload = init;
