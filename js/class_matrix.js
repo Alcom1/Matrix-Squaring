@@ -20,6 +20,30 @@ Matrix.prototype.setMat = function(mat)
     this.mat = mat;
 }
 
+Matrix.prototype.mult = function(matr)
+{
+    var tempMatThis = [];
+    for(var i = 0; i < this.mat.length; i++)
+        tempMatThis[i] = this.mat[i].slice();
+        
+    var tempMatThat = [];
+    for(var i = 0; i < this.mat.length; i++)
+        tempMatThat[i] = matr.mat[i].slice();
+    
+    for(var j = 0; j < tempMatThat.length; j++)
+    {
+        for(var i = 0; i < tempMatThat[0].length; i++)
+        {
+            var temp = 0;
+            for(var k = 0; k < tempMatThat.length; k++)
+            {
+                temp += tempMatThis[j][k] * tempMatThat[i][k];
+            }
+            this.mat[j][i] = temp;
+        }
+    }   
+}
+
 Matrix.prototype.getMult = function(matr)
 {
     var newMat = [];

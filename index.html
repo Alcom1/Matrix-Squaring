@@ -12,6 +12,9 @@
             {
                 var matrix = new Matrix();
                 var matrixSquared = matrix.getMult(matrix);
+                matrix.mult(matrix);
+                matrix.log();
+                console.log("");
                 matrixSquared.log();
             }
             
